@@ -1,10 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
-  home: Home()
-));
-
+void main() => runApp(MaterialApp(home: Home()));
 
 class Home extends StatelessWidget {
   @override
@@ -19,21 +16,15 @@ class Home extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
-          Row(
-            children: <Widget>[
-              Text('hello'),
-              Text(' world'),
-            ],
+          Container(
+            padding: EdgeInsets.all(30.0),
+            color: Colors.pinkAccent,
+            child: Text('two'),
           ),
           Container(
             padding: EdgeInsets.all(20.0),
             color: Colors.cyan,
             child: Text('one'),
-          ),
-          Container(
-            padding: EdgeInsets.all(30.0),
-            color: Colors.pinkAccent,
-            child: Text('two'),
           ),
           Container(
             padding: EdgeInsets.all(40.0),
@@ -50,5 +41,3 @@ class Home extends StatelessWidget {
     );
   }
 }
-
-
