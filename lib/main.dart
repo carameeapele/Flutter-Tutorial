@@ -2,53 +2,35 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-  home: Home()
-));
+      home: QuoteList(),
+    ));
 
+class QuoteList extends StatefulWidget {
+  const QuoteList({Key? key}) : super(key: key);
 
-class Home extends StatelessWidget {
+  @override
+  _QuoteListState createState() => _QuoteListState();
+}
+
+class _QuoteListState extends State<QuoteList> {
+  List<String> quotes = [
+    'Be yourself, everyone else is already taken',
+    'I have nothing to declare except my genius',
+    'The truth is rarely pure and never simple'
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text('my first app'),
+        title: Text('Awesome Quotes'),
         centerTitle: true,
-        backgroundColor: Colors.red[600],
+        backgroundColor: Colors.redAccent,
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: <Widget>[
-          Row(
-            children: <Widget>[
-              Text('hello'),
-              Text(' world'),
-            ],
-          ),
-          Container(
-            padding: EdgeInsets.all(20.0),
-            color: Colors.cyan,
-            child: Text('one'),
-          ),
-          Container(
-            padding: EdgeInsets.all(30.0),
-            color: Colors.pinkAccent,
-            child: Text('two'),
-          ),
-          Container(
-            padding: EdgeInsets.all(40.0),
-            color: Colors.amber,
-            child: Text('three'),
-          ),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Text('click'),
-        backgroundColor: Colors.red[600],
+        children: quotes.map((quote) => Text(quote)).toList(),
       ),
     );
   }
 }
-
-
